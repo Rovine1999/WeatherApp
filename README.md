@@ -1,11 +1,12 @@
 # React Weather App
 Uses cities api and current weather api to show weather forecast of 
-different cities around the globe.\
+different cities around the globe.
 
 
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Install react, react-dom.
+Clone the project 
 
 ## Available Scripts
 
