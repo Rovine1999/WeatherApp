@@ -1,12 +1,11 @@
-import CurrentWeather from './components/current-weather/current-weather';
-import Search from './components/search/search';
-import './App.css';
-import { WEATHER_API_URL, WEATHER_API_KEY } from './api';
-import { useState } from 'react';
-import Forecast from './components/forecast/forecast';
-import Navbar from './components/navbar/navbar';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import CurrentWeather from './components/current-weather/current-weather'
+import Search from './components/search/search'
+import './App.css'
+import { WEATHER_API_URL, WEATHER_API_KEY } from './api'
+import { useState } from 'react'
+import Forecast from './components/forecast/forecast'
+import Navbar from './components/navbar/navbar'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null)
@@ -45,5 +44,4 @@ function App() {
     </div>
   )
 }
-
-export default App;
+export default App

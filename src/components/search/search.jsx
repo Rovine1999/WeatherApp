@@ -40,4 +40,4 @@ const Search = ({ OnSearchChange }) => {
   )
 }
 
-export default Search
+export default Search;

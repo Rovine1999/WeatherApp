@@ -1,4 +1,4 @@
-import './current-weather.css'
+import './current-weather.css';
 
 const CurrentWeather = ({ data }) => {
   return (
@@ -37,6 +37,14 @@ const CurrentWeather = ({ data }) => {
           <div className="parameter-row">
             <span className="parameter-label">Pressure</span>
             <span className="parameter-value">{data.main.pressure}hPa</span>
+          </div>
+          <div className="parameter-row">
+            <span className="parameter-label">Sea Level</span>
+            <span className="parameter-value">{data.main.sea_level}m</span>
+          </div>
+          <div className="parameter-row">
+            <span className="parameter-label">Ground Level</span>
+            <span className="parameter-value">{data.main.grnd_level}m</span>
           </div>
         </div>
       </div>
