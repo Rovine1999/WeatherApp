@@ -1,4 +1,5 @@
 import CurrentWeather from './components/current-weather/current-weather'
+import { BrowserRouter, Routes } from 'react-router-dom'
 import Search from './components/search/search'
 import './App.css'
 import { WEATHER_API_URL, WEATHER_API_KEY } from './api'
@@ -36,12 +37,25 @@ function App() {
   console.log(forecast)
 
   return (
-    <div className="container">
-      <Navbar />
-      <Search OnSearchChange={handleOnSearchChange} />
-      {currentWeather && <CurrentWeather data={currentWeather} />}
-      {forecast && <Forecast data={forecast} />}
-    </div>
+    <BrowserRouter>
+      <div className="container">
+       
+          
+            
+           {<Search OnSearchChange={handleOnSearchChange} />}
+        
+          
+           
+            {currentWeather && <CurrentWeather data={currentWeather} />}
+      
+          
+           
+            {forecast && <Forecast data={forecast} />}
+         
+           {<Navbar />} 
+        
+      </div>
+    </BrowserRouter>
   )
 }
 export default App

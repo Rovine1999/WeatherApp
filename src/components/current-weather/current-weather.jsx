@@ -1,4 +1,4 @@
-import './current-weather.css';
+import './current-weather.css'
 
 const CurrentWeather = ({ data }) => {
   return (
@@ -49,7 +49,6 @@ const CurrentWeather = ({ data }) => {
         </div>
       </div>
     </div>
-  )
+  );
 }
-
-export default CurrentWeather;
+export default CurrentWeather
