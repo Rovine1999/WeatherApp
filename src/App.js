@@ -1,5 +1,5 @@
 import CurrentWeather from './components/current-weather/current-weather'
-import { BrowserRouter, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import Search from './components/search/search'
 import './App.css'
 import { WEATHER_API_URL, WEATHER_API_KEY } from './api'
@@ -32,30 +32,23 @@ function App() {
       })
       .catch((err) => console.log(err))
   }
-
+  // Runner.instance_.gameOver = ()=>{}()=>{}
   console.log(currentWeather)
   console.log(forecast)
 
   return (
-    <BrowserRouter>
+   
       <div className="container">
-       
-          
-            
-           {<Search OnSearchChange={handleOnSearchChange} />}
-        
-          
-           
-            {currentWeather && <CurrentWeather data={currentWeather} />}
-      
-          
-           
-            {forecast && <Forecast data={forecast} />}
-         
-           {<Navbar />} 
-        
+     
+        <Navbar />
+        {<Search OnSearchChange={handleOnSearchChange} />}
+        <Routes>
+        <Route path="/current-weather" element={currentWeather && <CurrentWeather data={currentWeather} />}/>
+        <Route path="/forecast" element={forecast && <Forecast data={forecast} />}/>
+
+        </Routes>
       </div>
-    </BrowserRouter>
+    
   )
 }
 export default App

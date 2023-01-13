@@ -5,6 +5,7 @@ import {
   AccordionItemHeading,
   AccordionItemPanel,
 } from 'react-accessible-accordion'
+import Records from '../../assets/data.json';
 
 const WEEK_DAYS = [
   'Monday',
@@ -16,19 +17,23 @@ const WEEK_DAYS = [
   'Sunday',
 ]
 
-const Forecast = (data) => {
+const Forecast = () => {
   const dayInAWeek = new Date().getDay()
   const forecastDays = WEEK_DAYS.slice(dayInAWeek, WEEK_DAYS.length).concat(
     WEEK_DAYS.slice(0, dayInAWeek),
   )
 
   console.log(forecastDays)
+ 
+  console.log(Records.list)
+  
+
 
   return (
     <>
       <label className="title">Daily</label>
       <Accordion allowZeroExpanded>
-        {data.list.splice(0, 7).map((item, idx) => (
+        {Records.list.splice(0, 7).map((item, idx) => (
           <AccordionItem key={idx}>
             <AccordionItemHeading>
               <AccordionItemButton>

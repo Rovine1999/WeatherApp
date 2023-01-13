@@ -1,12 +1,13 @@
 import React from 'react';
 import './navbar.css';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a className="navbar-brand" href="/">
-        Weather
-      </a>
+      <Link>Weather</Link>
+        
+      
       <button
         className="navbar-toggler"
         type="button"
@@ -22,19 +23,17 @@ const Navbar = () => {
       <div className="collapse navbar-collapse" id="navbarNavDropdown">
         <ul className="navbar-nav">
           <li className="nav-item active">
-            <a className="nav-link" href="/">
-              Home <span className="sr-only"></span>
-            </a>
+            <Link to="/current-weather">Current Weather</Link>
+            
+         
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/">
-              Forecast
-            </a>
+            <Link to="/forecast">Forecast</Link>
+              
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/">
-              Cities
-            </a>
+            <Link>Cities</Link>
+          
           </li>
         </ul>
       </div>
