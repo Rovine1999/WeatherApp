@@ -1,8 +1,9 @@
 import CurrentWeather from './components/current-weather/current-weather'
 import { Route, Routes } from 'react-router-dom'
 import Search from './components/search/search'
+import Countries from './components/countries/countries'
 import './App.css'
-import { WEATHER_API_URL, WEATHER_API_KEY } from './api'
+import { WEATHER_API_URL, WEATHER_API_KEY} from './api'
 import { useState } from 'react'
 import Forecast from './components/forecast/forecast'
 import Navbar from './components/navbar/navbar'
@@ -22,6 +23,7 @@ function App() {
       `${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`,
     )
 
+    
     Promise.all([CurrentWeatherFetch, forecastFetch])
       .then(async (response) => {
         const weatherResponse = await response[0].json()
@@ -42,6 +44,7 @@ function App() {
      
         <Navbar />
         {<Search OnSearchChange={handleOnSearchChange} />}
+        {<Countries OnSearchChange={handleOnSearchChange} />}
         <Routes>
         <Route path="/current-weather" element={currentWeather && <CurrentWeather data={currentWeather} />}/>
         <Route path="/forecast" element={forecast && <Forecast data={forecast} />}/>
